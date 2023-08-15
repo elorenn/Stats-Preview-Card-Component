@@ -1,21 +1,13 @@
 :root {
   --white: hsl(0, 0%, 100%);
-  --dark-cyan: hsl(185, 75%, 39%);
-  --very-dark-desaturated-blue: hsl(229, 23%, 23%);
-  --dark-grayish-blue: hsl(227, 10%, 46%);
-  --dark-gray: hsl(0, 0%, 59%);
+  --main-background: hsl(233, 47%, 7%);
+  --card-background: hsl(244, 38%, 16%);
+  --accent-violet: hsl(277, 64%, 61%);
+  --main-paragraph: hsla(0, 0%, 100%, 0.75);
+  --stat-headings: hsla(0, 0%, 100%, 0.6);
   --font-1: "Inter", sans-serif;
   --font-2: "Lexend Deca", sans-serif;
 }
-
-/* 
-- Very dark blue (main background): hsl(233, 47%, 7%)
-- Dark desaturated blue (card background): hsl(244, 38%, 16%)
-- Soft violet (accent): hsl(277, 64%, 61%)
-- White (main heading, stats): hsl(0, 0%, 100%)
-- Slightly transparent white (main paragraph): hsla(0, 0%, 100%, 0.75)
-- Slightly transparent white (stat headings): hsla(0, 0%, 100%, 0.6) 
-*/
 
 *,
 *::before,
@@ -26,7 +18,7 @@
 body {
   -webkit-font-smoothing: antialiased;
   margin: 0;
-  background-color: var(--dark-cyan);
+  background-color: var(--main-background);
   font-family: var(--font-2);
   font-size: 15px;
   min-height: 100vh;
@@ -36,7 +28,7 @@ body {
 }
 
 .card {
-  background-color: var(--white);
+  background-color: var(--card-background);
   max-width: 350px;
   /* height: 375px; */
   border-radius: 10px;
@@ -50,10 +42,24 @@ body {
   position: relative;
 }
 
+h1,
+h2 {
+  color: var(--white);
+}
+
+h1 span {
+  color: var(--accent-violet);
+}
+
+p {
+  color: var(--main-paragraph);
+}
+
 .stats p {
   font-size: 12px;
   letter-spacing: 1px;
   margin: 5px;
+  color: var(--stat-headings);
 }
 
 .stats h2 {
@@ -72,6 +78,14 @@ body {
   padding: 15px 0 20px;
 }
 
+picture {
+  background-color: var(--accent-violet);
+}
+
+picture img {
+  mix-blend-mode: multiply;
+}
+
 footer {
   position: fixed;
   left: 0;
@@ -85,9 +99,9 @@ footer {
 .attribution {
   font-size: 11px;
   text-align: center;
-  color: var(--very-dark-desaturated-blue);
+  color: var(--stat-headings);
 }
 
 .attribution a {
-  color: hsla(0, 0%, 100%, 0.65);
+  color: var(--main-paragraph);
 }
